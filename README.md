@@ -18,7 +18,7 @@ nx run desktop:install-app --name=@owdproject/app-youtube
 
 ## Usage
 
-### Available commands
+#### Available commands
 
 ```
 youtube <youtube-url>
