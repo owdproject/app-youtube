@@ -13,7 +13,7 @@ This app for Open Web Desktop provides a YouTube and YouTube Music player.
 ## Installation
 
 ```bash
-nx run desktop:install-app --name=@owdproject/app-youtube
+owd install-app @owdproject/app-youtube
 ```
 
 ## Usage
