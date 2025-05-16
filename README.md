@@ -24,6 +24,8 @@ owd install-app @owdproject/app-youtube
 youtube <youtube-url>
 youtube --new
 youtube --music <youtube-url>
+youtube --autoplay <youtube-url>
+youtube --no-check <youtube-url>
 ```
 
 ## License
