@@ -1,0 +1,18 @@
+{
+  "name": "@owdproject/app-youtube",
+  "version": "0.0.1",
+  "description": "YouTube App for your Open Web Desktop client",
+  "keywords": [
+    "owd-client",
+    "owd-apps",
+    "owd-modules",
+    "youtube"
+  ],
+  "private": true,
+  "license": "MIT",
+  "homepage": "https://github.com/owdproject/app-youtube",
+  "author": {
+    "name": "Open Web Desktop Team",
+    "url": "https://github.com/owdproject"
+  }
+}
