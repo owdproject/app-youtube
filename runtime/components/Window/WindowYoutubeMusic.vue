@@ -15,20 +15,17 @@ function onYoutubeMusicPlayClick() {
 </script>
 
 <template>
-  <Window v-bind="$props">
+  <WindowIframe
+    v-bind="$props"
+    width="315"
+    height="315"
+    :src="`https://www.youtube.com/embed/${props.window.meta.videoId}?autoplay=${Number(props.window.meta.autoplay)}`"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+  >
     <template #nav-append v-if="!props.window.meta.videoId">
       <ButtonWindowNav rounded @click="onYoutubeMusicPlayClick">
         <Icon name="mdi:play" />
       </ButtonWindowNav>
     </template>
-
-    <iframe
-      width="315"
-      height="315"
-      :src="`https://www.youtube.com/embed/${props.window.meta.videoId}?autoplay=${Number(props.window.meta.autoplay)}`"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-      referrerpolicy="strict-origin-when-cross-origin"
-      allowfullscreen
-    />
-  </Window>
+  </WindowIframe>
 </template>

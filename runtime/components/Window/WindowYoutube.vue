@@ -15,7 +15,13 @@ function onYoutubePlayClick() {
 </script>
 
 <template>
-  <Window v-bind="$props">
+  <WindowIframe
+    v-bind="$props"
+    width="560"
+    height="315"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    :src="`https://www.youtube.com/embed/${props.window.meta.videoId}?autoplay=${Number(props.window.meta.autoplay)}`"
+  >
     <template #nav-append v-if="!props.window.meta.videoId">
       <ButtonWindowNav
         rounded
@@ -24,14 +30,5 @@ function onYoutubePlayClick() {
         <Icon name="mdi:play" />
       </ButtonWindowNav>
     </template>
-
-    <iframe
-      width="560"
-      height="315"
-      :src="`https://www.youtube.com/embed/${props.window.meta.videoId}?autoplay=${Number(props.window.meta.autoplay)}`"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-      referrerpolicy="strict-origin-when-cross-origin"
-      allowfullscreen
-    />
-  </Window>
+  </WindowIframe>
 </template>
