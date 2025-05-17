@@ -1,15 +1,15 @@
 <script setup lang="ts">
-import { getYouTubeId, isValidYouTubeUrl } from '../../utils/utilYoutube';
+import { getYouTubeId, isValidYouTubeUrl } from '../../utils/utilYoutube'
 
 const props = defineProps<{
-  window?: IWindowController;
-}>();
+  window?: IWindowController
+}>()
 
 function onYoutubeMusicPlayClick() {
-  const url = window.prompt('Which video would you like to play?');
+  const url = window.prompt('Which video would you like to play?')
 
   if (url && isValidYouTubeUrl(url)) {
-    props.window.meta.videoId = getYouTubeId(url);
+    props.window.meta.videoId = getYouTubeId(url)
   }
 }
 </script>

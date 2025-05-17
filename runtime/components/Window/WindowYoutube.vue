@@ -1,12 +1,12 @@
 <script setup lang="ts">
-import { getYouTubeId, isValidYouTubeUrl } from '../../utils/utilYoutube';
+import { getYouTubeId, isValidYouTubeUrl } from '../../utils/utilYoutube'
 
 const props = defineProps<{
-  window?: IWindowController;
-}>();
+  window?: IWindowController
+}>()
 
 function onYoutubePlayClick() {
-  const url = window.prompt('Which video would you like to play?');
+  const url = window.prompt('Which video would you like to play?')
 
   if (url && isValidYouTubeUrl(url)) {
     props.window.meta.videoId = getYouTubeId(url)
@@ -23,10 +23,7 @@ function onYoutubePlayClick() {
     :src="`https://www.youtube.com/embed/${props.window.meta.videoId}?autoplay=${Number(props.window.meta.autoplay)}`"
   >
     <template #nav-append v-if="!props.window.meta.videoId">
-      <ButtonWindowNav
-        rounded
-        @click="onYoutubePlayClick"
-      >
+      <ButtonWindowNav rounded @click="onYoutubePlayClick">
         <Icon name="mdi:play" />
       </ButtonWindowNav>
     </template>
