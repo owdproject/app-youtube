@@ -1,6 +1,6 @@
 {
   "name": "@owdproject/app-youtube",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "YouTube App for your Open Web Desktop client",
   "keywords": [
     "owd-client",
