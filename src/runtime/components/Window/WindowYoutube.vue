@@ -15,7 +15,7 @@ function onYoutubePlayClick() {
 </script>
 
 <template>
-  <WindowIframe
+  <DesktopWindowIframe
     v-bind="$props"
     width="560"
     height="315"
@@ -27,5 +27,5 @@ function onYoutubePlayClick() {
         <Icon name="mdi:play" />
       </ButtonWindowNav>
     </template>
-  </WindowIframe>
+  </DesktopWindowIframe>
 </template>
