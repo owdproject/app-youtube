@@ -10,8 +10,14 @@ export function isYouTubeMusicUrl(url: string) {
 }
 
 export function getYouTubeId(urlOrId: string) {
-  // if it's already a valid ID (11 characters)
-  if (/^[a-zA-Z0-9_-]{11}$/.test(urlOrId)) {
+  // Check if it matches a query parameter first, especially list= for playlists
+  const playlistMatch = urlOrId.match(/[?&]list=([a-zA-Z0-9_-]+)/)
+  if (playlistMatch && playlistMatch[1]) {
+    return playlistMatch[1]
+  }
+
+  // if it's already a valid video ID (11 characters) or playlist ID (usually starts with PL, 18-34 characters)
+  if (/^[a-zA-Z0-9_-]{11}$/.test(urlOrId) || /^(PL)?[a-zA-Z0-9_-]{18,34}$/.test(urlOrId)) {
     return urlOrId
   }
 

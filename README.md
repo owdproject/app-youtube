@@ -30,6 +30,24 @@ youtube <youtube-url> --autoplay
 youtube <youtube-url> --no-check
 ```
 
+## Configuration
+
+You can customize the list of featured stations displayed on the initial dashboard inside your desktop configuration (`desktop.config.ts`):
+
+```ts
+import { defineDesktopConfig } from '@owdproject/core'
+
+export default defineDesktopConfig({
+  // ...
+  'org.owdproject.youtube': {
+    featuredStations: [
+      { id: 'jfKfPfyJRdk', title: 'Lofi Girl - Lofi Hip Hop Radio' },
+      { id: '5qap5aO4i9A', title: 'Lofi Hip Hop Radio - Beats to Study/Relax' }
+    ]
+  }
+})
+```
+
 ## License
 
 The application is released under the [MIT License](LICENSE).
