@@ -37,3 +37,10 @@ export function getYouTubeId(urlOrId: string) {
 
   return null
 }
+
+export function getYoutubeThumbnail(id: string): string | undefined {
+  if (/^[a-zA-Z0-9_-]{11}$/.test(id)) {
+    return `https://img.youtube.com/vi/${id}/hqdefault.jpg`
+  }
+  return undefined
+}

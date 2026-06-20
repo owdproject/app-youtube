@@ -46,6 +46,7 @@
     "validate": "desktop validate ."
   },
   "dependencies": {
+    "@nuxt/fonts": "^0.11.4",
     "@nuxt/kit": "^4.4.6",
     "@owdproject/kit-tailwind": "workspace:*"
   },

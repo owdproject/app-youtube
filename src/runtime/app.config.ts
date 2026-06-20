@@ -9,21 +9,16 @@ export default {
   title: 'YouTube',
   singleton: true,
   icon: 'simple-icons:youtube',
-  featuredStations: [
-    { id: 'jfKfPfyJRdk', title: 'Lofi Girl - Lofi Hip Hop Radio' },
-    { id: '5qap5aO4i9A', title: 'Lofi Hip Hop Radio - Beats to Study/Relax' },
-    { id: 'tNkZs5MStGQ', title: 'Ambient Nature Sounds for Study' }
-  ],
   windows: {
     main: {
       component: () => import('./components/Window/WindowYoutube.vue'),
       resizable: true,
       size: {
-        width: 640,
-        height: 480,
-        minWidth: 400,
-        minHeight: 320,
-        maxHeight: 600,
+        width: 720,
+        height: 520,
+        minWidth: 480,
+        minHeight: 400,
+        maxHeight: 680,
       },
     },
     music: {

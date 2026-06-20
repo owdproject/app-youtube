@@ -10,7 +10,9 @@
 
 ## Overview
 
-This app for Open Web Desktop provides a YouTube and YouTube Music player.
+This app for Open Web Desktop provides a YouTube and YouTube Music player with a rotating featured gallery on the dashboard.
+
+[Demo](https://owdproject.github.io/app-youtube/) · [Documentation](https://owdproject.github.io/docs/) · [Support](https://github.com/sponsors/owdproject)
 
 ## Installation
 
@@ -32,22 +34,27 @@ youtube <youtube-url> --no-check
 
 ## Configuration
 
-You can customize the list of featured stations displayed on the initial dashboard inside your desktop configuration (`desktop.config.ts`):
+Add the app to your `desktop.config.ts` and customize the featured gallery:
 
 ```ts
 import { defineDesktopConfig } from '@owdproject/core'
 
 export default defineDesktopConfig({
-  // ...
-  'org.owdproject.youtube': {
+  apps: [
+    '@owdproject/app-youtube'
+  ],
+  youtube: {
+    galleryRotateIntervalMs: 8000,
     featuredStations: [
-      { id: 'jfKfPfyJRdk', title: 'Lofi Girl - Lofi Hip Hop Radio' },
-      { id: '5qap5aO4i9A', title: 'Lofi Hip Hop Radio - Beats to Study/Relax' }
+      { id: 'jfKfPfyJRdk', title: 'Lofi Girl' },
+      { id: 'tNkZs5MStGQ', title: 'Ambient Nature Sounds' },
     ]
   }
 })
 ```
 
+Each featured station supports an optional `thumbnail` URL. Video IDs (11 characters) get a YouTube cover automatically. The dashboard shows a 2×2 gallery; every `galleryRotateIntervalMs` milliseconds one tile cycles to the next featured item. Click a tile to play.
+
 ## License
 
-The application is released under the [MIT License](LICENSE).
+This application is released under the [MIT License](LICENSE).
