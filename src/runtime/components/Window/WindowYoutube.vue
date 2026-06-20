@@ -373,7 +373,6 @@ function thumbFor(id: string, custom?: string) {
     align-items: center;
     gap: 16px;
     padding: 12px 16px;
-    border-bottom: 1px solid color-mix(in srgb, currentColor 10%, transparent);
   }
 
   &__brand {
@@ -473,7 +472,6 @@ function thumbFor(id: string, custom?: string) {
     display: flex;
     flex-direction: column;
     padding: 14px 12px 14px 16px;
-    border-right: 1px solid color-mix(in srgb, currentColor 10%, transparent);
   }
 
   &__feed {
