@@ -18,6 +18,7 @@
   "exports": {
     ".": {
       "types": "./dist/types.d.mts",
+      "development": "./src/module.ts",
       "import": "./dist/module.mjs",
       "default": "./dist/module.mjs"
     }
@@ -45,18 +46,18 @@
     "validate": "desktop validate ."
   },
   "dependencies": {
-    "@nuxt/kit": "^4.3.0",
+    "@nuxt/kit": "^4.4.6",
     "@owdproject/kit-tailwind": "workspace:*"
-  },
-  "devDependencies": {
-    "@nuxt/module-builder": "^1.0.2",
-    "@nuxt/schema": "^4.3.0",
-    "@owdproject/core": "workspace:*",
-    "@owdproject/theme-nova": "workspace:*",
-    "nuxt": "^4.3.0",
-    "typescript": "~5.9.3"
   },
   "peerDependencies": {
     "@owdproject/core": "^3.4.0"
+  },
+  "devDependencies": {
+    "@nuxt/module-builder": "^1.0.2",
+    "@nuxt/schema": "^4.4.6",
+    "@owdproject/core": "workspace:*",
+    "@owdproject/theme-nova": "workspace:*",
+    "nuxt": "^4.4.6",
+    "typescript": "~6.0.3"
   }
 }

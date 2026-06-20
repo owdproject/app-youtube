@@ -20,15 +20,10 @@ export default {
       resizable: true,
       size: {
         width: 640,
-        height: 'auto',
+        height: 480,
         minWidth: 400,
         minHeight: 320,
         maxHeight: 600,
-      },
-      position: {
-        x: 350,
-        y: 180,
-        z: 0,
       },
     },
     music: {
@@ -36,13 +31,8 @@ export default {
       title: 'YouTube Music',
       resizable: false,
       size: {
-        width: 'auto',
-        height: 'auto',
-      },
-      position: {
-        x: 400,
-        y: 240,
-        z: 0,
+        width: 400,
+        height: 120,
       },
     },
   },

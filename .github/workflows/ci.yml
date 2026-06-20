@@ -1,22 +1,19 @@
-name: Deploy playground to GitHub Pages
+name: CI
 
 on:
   push:
     branches:
       - main
-  workflow_dispatch:
-
-permissions:
-  contents: read
-  pages: write
-  id-token: write
+  pull_request:
+    branches:
+      - main
 
 concurrency:
-  group: pages
+  group: ci-${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
-  build:
+  validate-and-build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout OWD client (workspace deps)
@@ -69,24 +66,12 @@ jobs:
         working-directory: client/apps/app-youtube
         run: pnpm run dev:prepare
 
+      - name: Validate module layout
+        working-directory: client/apps/app-youtube
+        run: pnpm run validate
+
       - name: Generate static playground
         working-directory: client/apps/app-youtube
         run: pnpm run dev:generate
         env:
           NUXT_APP_BASE_URL: /app-youtube/
-
-      - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: client/apps/app-youtube/playground/.output/public
-
-  deploy:
-    needs: build
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
