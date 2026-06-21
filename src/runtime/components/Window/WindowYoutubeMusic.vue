@@ -23,9 +23,9 @@ function onYoutubeMusicPlayClick() {
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
   >
     <template #nav-append v-if="!props.window.meta.videoId">
-      <ButtonWindowNav rounded @click="onYoutubeMusicPlayClick">
+      <DesktopWindowNavButton rounded title="Play video" @click="onYoutubeMusicPlayClick">
         <Icon name="mdi:play" />
-      </ButtonWindowNav>
+      </DesktopWindowNavButton>
     </template>
   </DesktopWindowIframe>
 </template>
